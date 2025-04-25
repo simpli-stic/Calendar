@@ -47,22 +47,22 @@ void printCalendar(int month, int year) {
     }
     printf("\n");
 }
-
+// Main function to get the month and year from the user and display the calendar
 int main() {
     int month, year;
-
+// Ask the user to input the month and year
     printf("Enter month (1-12): ");
     scanf("%d", &month);
 
     printf("Enter year: ");
     scanf("%d", &year);
-
+// Validate the month input
     if (month < 1 || month > 12) {
         printf("Invalid month!\n");
         return 1;
     }
-
+ // Call the function to print the calendar for the entered month and year
     printCalendar(month, year);
 
-    return 0;
+    return 0;// Exit the program successfully
 }
