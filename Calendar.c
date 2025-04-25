@@ -6,11 +6,13 @@ int getDayOfWeek(int day, int month, int year) {
     int adjustment, mm, yy;
      // Adjustment for months January and February in the Gregorian calendar
     adjustment = (14 - month) / 12;
+     // Calculate the year and month for the algorithm
     yy = year - adjustment;
     mm = month + 12 * adjustment - 2;
+    // Zeller's congruence formula to calculate the day of the week
     return (day + yy + yy / 4 - yy / 100 + yy / 400 + (31 * mm) / 12) % 7;
 }
-
+// Function to print the calendar for a given month and year
 void printCalendar(int month, int year) {
     char *months[] = {"January", "February", "March", "April", "May", "June",
                       "July", "August", "September", "October", "November", "December"};
