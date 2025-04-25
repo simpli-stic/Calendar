@@ -14,16 +14,19 @@ int getDayOfWeek(int day, int month, int year) {
 }
 // Function to print the calendar for a given month and year
 void printCalendar(int month, int year) {
+    // Array of month names
     char *months[] = {"January", "February", "March", "April", "May", "June",
                       "July", "August", "September", "October", "November", "December"};
+  // Array of days in each month (non-leap year)
     int days[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    // Variables to store the day of the week and number of days in the month
     int dayOfWeek, daysInMonth;
 
     // Handle leap year for February
     if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
-        days[1] = 29;
+        days[1] = 29; // February has 29 days in a leap year
     }
-
+// Handle leap year for February (28 or 29 days)
     daysInMonth = days[month - 1];
     dayOfWeek = getDayOfWeek(1, month, year);
 
