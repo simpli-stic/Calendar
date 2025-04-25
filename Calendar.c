@@ -1,7 +1,10 @@
 #include <stdio.h>
+// Function to get the day of the week for a given date
+// It returns an integer representing the day of the week (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
 
 int getDayOfWeek(int day, int month, int year) {
     int adjustment, mm, yy;
+     // Adjustment for months January and February in the Gregorian calendar
     adjustment = (14 - month) / 12;
     yy = year - adjustment;
     mm = month + 12 * adjustment - 2;
